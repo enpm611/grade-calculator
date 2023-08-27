@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Server Start",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/app/server.py",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "DYLD_LIBRARY_PATH": "/usr/local/Cellar/gcc@8/8.5.0/lib/gcc/8/"}
+        },
+        {
+            "name": "Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "DYLD_LIBRARY_PATH": "/usr/local/Cellar/gcc@8/8.5.0/lib/gcc/8/"}
+        }
+    ]
+}
