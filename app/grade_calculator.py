@@ -82,8 +82,7 @@ class GradeCalculator:
             return 'D'
         else:
             return 'F'
-    def mininumScoreForA(grades,):
-        weights=GradeWeights()
+    def mininumScoreForA(grades,weights):
         quizzes_part = ((grades.quiz_1 + grades.quiz_2) / 2) * weights.quizzes
         midterm_part = grades.midterm * weights.midterm
         project_part = grades.project * weights.project
