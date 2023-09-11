@@ -3,6 +3,7 @@
 from grades import Grades
 from grade_weights import GradeWeights
 from grade_calculator import GradeCalculator
+from grade_calculator import minavgpoints
 
 # This runs the grade calculation.
 
@@ -28,4 +29,6 @@ else:
 optimistic_percentage_grade = GradeCalculator.calculate_optimistic_course_percentage(my_grades, weights)
 optimistic_letter_grade = GradeCalculator.calculate_letter_grade(optimistic_percentage_grade)
 print(f'If all other assignments are 100%, the overall course would be {optimistic_percentage_grade*100}%, which is a {optimistic_letter_grade}')
+
+GradeCalculator.minavgpoints();
 

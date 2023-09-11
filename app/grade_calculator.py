@@ -82,3 +82,7 @@ class GradeCalculator:
             return 'D'
         else:
             return 'F'
+
+    @staticmethod
+    def minavgpoints():
+        print("8")
