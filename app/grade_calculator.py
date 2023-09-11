@@ -82,3 +82,32 @@ class GradeCalculator:
             return 'D'
         else:
             return 'F'
+        
+    @staticmethod
+    def calculate_min_average_toGet_GradeA(grades:Grades, weights:GradeWeights) -> float:
+        """
+        Calculates the minimum average points for all yet ungraded
+        assignments to still get an A in class. 
+        """
+        
+        # Need to create a copy so that we don't overwrite
+        # the values of the Grades object that was passed in
+        optimistic_grades:Grades = copy.copy(grades)
+        
+        # Now we are setting all grades that have not been set
+        # to the maximum percentage of 100%
+        if optimistic_grades.quiz_1 is None:
+            optimistic_grades.quiz_1 = 1
+        if optimistic_grades.quiz_2 is None:
+            optimistic_grades.quiz_2 = 1
+        if optimistic_grades.midterm is None:
+            optimistic_grades.midterm = 1
+        if optimistic_grades.project is None:
+            optimistic_grades.project = 1
+        if optimistic_grades.final is None:
+            optimistic_grades.final = 1
+        
+        # Let the basic calculation function take care of actually
+        # calculating the percentage grade
+        return (91 - GradeCalculator.calculate_course_percentage(optimistic_grades, weights))
+        
