@@ -63,23 +63,43 @@ class GradeCalculator:
         avg_grades:Grades = copy.copy(grades)
         target_grade = 0.91
         other_weights = 0
+        res = 0.00
+        
         if avg_grades.quiz_1 is None:
             avg_grades.quiz_1 = 0
             other_weights += weights.quiz1
+        else:
+            target_grade -= avg_grades.quiz_1 * weights.quiz1
+
         if avg_grades.quiz_2 is None:
             avg_grades.quiz_2 = 0
             other_weights += weights.quiz2
+        else:
+            target_grade -= avg_grades.quiz_2 * weights.quiz2  
+
         if avg_grades.midterm is None:
             avg_grades.midterm = 0
             other_weights += weights.midterm
+        else:
+            target_grade -= avg_grades.midterm * weights.midterm
+
         if avg_grades.project is None:
             avg_grades.project = 0
             other_weights += weights.project
+        else:
+            target_grade -= avg_grades.project * weights.project
+            
         if avg_grades.final is None:
             avg_grades.final = 0
             other_weights += weights.final
+        else:   
+            target_grade -= avg_grades.final * weights.final
             
-        return 0.00
+        if other_weights > 0:
+            res = target_grade / other_weights
+        else:
+            return 0.00
+        return res
         
     @staticmethod
     def calculate_letter_grade(percentage_grade:float) -> str:
