@@ -6,6 +6,8 @@ from grade_calculator import GradeCalculator
 
 # This runs the grade calculation.
 
+#This is a forked version created by Yash Jain. Divye Raghav and Amitejash Rout made changes.
+
 # Instatiate Grade and Weights objects
 my_grades = Grades()
 weights = GradeWeights()
