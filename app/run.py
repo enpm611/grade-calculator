@@ -29,3 +29,12 @@ optimistic_percentage_grade = GradeCalculator.calculate_optimistic_course_percen
 optimistic_letter_grade = GradeCalculator.calculate_letter_grade(optimistic_percentage_grade)
 print(f'If all other assignments are 100%, the overall course would be {optimistic_percentage_grade*100}%, which is a {optimistic_letter_grade}')
 
+grade_percentage=95
+weights_till_now=0.5
+marks_to_get_A_grade=GradeCalculator.calculate_min_average_required_for_A_grade(grade_percentage,weights_till_now)
+if marks_to_get_A_grade!=-1:
+    print("you require ", marks_to_get_A_grade, "points in your remaining tests that equals ",marks_to_get_A_grade/(1-weights_till_now),"%")
+
+
+
+

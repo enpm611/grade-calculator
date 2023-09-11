@@ -36,7 +36,7 @@ class GradeCalculator:
         Calculates the course percentage grade assuming that
         all assignments that have not been completed receive 100%. 
         """
-        
+
         # Need to create a copy so that we don't overwrite
         # the values of the Grades object that was passed in
         optimistic_grades:Grades = copy.copy(grades)
@@ -82,3 +82,13 @@ class GradeCalculator:
             return 'D'
         else:
             return 'F'
+    @staticmethod
+    def calculate_min_average_required_for_A_grade(percentage_grades_till_now,graded_weights):
+
+        marks_out_of_hundred = percentage_grades_till_now * graded_weights
+        if 91-marks_out_of_hundred>(1-graded_weights)*100:
+            print("Sorry you can not get A grade")
+            return -1
+        return(91-marks_out_of_hundred)
+
+
