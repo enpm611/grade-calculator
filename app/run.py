@@ -15,6 +15,7 @@ my_grades.quiz_1 = 0.78 # Received 78% in the first quiz
 
 # Print out the grades to console
 print(my_grades)
+print("Checkpoint")
 
 # Calculate course grade based on the grades set above
 percentage_grade = GradeCalculator.calculate_course_percentage(my_grades, weights)
