@@ -11,7 +11,7 @@ my_grades = Grades()
 weights = GradeWeights()
 
 # Set grades achieved so far
-my_grades.quiz_1 = 0.78 # Received 78% in the first quiz
+my_grades.quiz_1 = 0.91 # Received 78% in the first quiz
 
 # Print out the grades to console
 print(my_grades)
@@ -27,5 +27,7 @@ else:
 # Calculate the grade assuming that all assignmets not turned in yet, will be 100%
 optimistic_percentage_grade = GradeCalculator.calculate_optimistic_course_percentage(my_grades, weights)
 optimistic_letter_grade = GradeCalculator.calculate_letter_grade(optimistic_percentage_grade)
+minimum_average_for_a = GradeCalculator.calculate_minimum_average_for_grade_a(my_grades, weights)
 print(f'If all other assignments are 100%, the overall course would be {optimistic_percentage_grade*100}%, which is a {optimistic_letter_grade}')
+print(f'You need to average at least {minimum_average_for_a*100:.2f}% on the remaining assignments to get an A in the course.')
 
