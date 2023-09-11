@@ -60,7 +60,25 @@ class GradeCalculator:
     
     @staticmethod
     def calculate_minimum_average_for_grade_a(grades=Grades, weights=GradeWeights) -> float:
-
+        avg_grades:Grades = copy.copy(grades)
+        target_grade = 0.91
+        other_weights = 0
+        if avg_grades.quiz_1 is None:
+            avg_grades.quiz_1 = 0
+            other_weights += weights.quiz1
+        if avg_grades.quiz_2 is None:
+            avg_grades.quiz_2 = 0
+            other_weights += weights.quiz2
+        if avg_grades.midterm is None:
+            avg_grades.midterm = 0
+            other_weights += weights.midterm
+        if avg_grades.project is None:
+            avg_grades.project = 0
+            other_weights += weights.project
+        if avg_grades.final is None:
+            avg_grades.final = 0
+            other_weights += weights.final
+            
         return 0.00
         
     @staticmethod
