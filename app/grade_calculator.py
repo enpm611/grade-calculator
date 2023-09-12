@@ -86,18 +86,29 @@ class GradeCalculator:
     @staticmethod 
     def calculate_minimum_average_for_A(grades:Grades, weights:GradeWeights) -> float:
         temporary_grades:Grades = copy.copy(grades)
-
+        weight, count = 0, 0
+        
         if temporary_grades.quiz_1 is None:
             temporary_grades.quiz_1 = 0
+            weight += weights.quizzes / 2
+            count += 1
         if temporary_grades.quiz_2 is None:
             temporary_grades.quiz_2 = 0
+            weight += weights.quizzes / 2
+            count += 1
         if temporary_grades.midterm is None:
             temporary_grades.midterm = 0
+            weight += weights.midterm
+            count += 1
         if temporary_grades.project is None:
             temporary_grades.project = 0
+            weight += weights.project
+            count += 1
         if temporary_grades.final is None:
             temporary_grades.final = 0
+            weight += weights.final
+            count += 1
 
         temporary_grade = GradeCalculator.calculate_course_percentage(temporary_grades, weights)
-        return 0.91 - temporary_grade
+        return max((0.91 - temporary_grade) / (count * weight), 0) if count else None
 
