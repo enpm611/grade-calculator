@@ -12,6 +12,10 @@ weights = GradeWeights()
 
 # Set grades achieved so far
 my_grades.quiz_1 = 0.78 # Received 78% in the first quiz
+my_grades.quiz_2 = 0.9
+my_grades.midterm = 1
+my_grades.project = 0.8
+my_grades.final = 0.54
 
 # Print out the grades to console
 print(my_grades)
