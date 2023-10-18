@@ -69,14 +69,6 @@ class GradeCalculator:
         # the values of the Grades object that was passed in
         my_grades:Grades = copy.copy(grades)
 
-        #logic 
-        # 90 - 
-        # ((grades.quiz_1 + grades.quiz_2) / 2) * weights.quizzes
-        # grades.midterm * weights.midterm
-        # grades.project * weights.project
-        # grades.final * weights.final
-        
-
         ungraded_weights = []
         current_grade = 0
 
@@ -103,12 +95,10 @@ class GradeCalculator:
             current_grade += my_grades.final * weights.final
 
         percentage = 0
-        for i in ungraded_weights:
-            percentage += ungraded_weights.index(i)
-        
-        avg = percentage / len(ungraded_weights)
-        
-        needed_percentage = (91 - current_grade) / avg 
+        for grade in ungraded_weights:
+            percentage += grade
+
+        needed_percentage = (.91 - current_grade) / percentage
         return needed_percentage
 
     @staticmethod
