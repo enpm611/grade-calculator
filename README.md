@@ -61,4 +61,4 @@ Can't calculate overall course grade without all individual grades.
 If all other assignments are 100%, the overall course would be 98.9%, which is a A
 ```
 
-Now feel free to modify the source code and see how it affect the output. Also, try installing Visual Studio Code (https://www.python.org/downloads) to make it easier to view, modify, and run Python programs.
+Now feel free to modify the source code and see how it affect the output. Also, try installing [Visual Studio Code](https://code.visualstudio.com/) to make it easier to view, modify, and run Python programs.
