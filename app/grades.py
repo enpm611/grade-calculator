@@ -51,6 +51,6 @@ class Grades:
         if len(grades) <= 0:
             return 'No grades submitted yet.'
         else:
-            # Create a string in which each element of the list
-            # is separate by a comma
+
+
             return 'GRADES --- ' + ', '.join(grades)
