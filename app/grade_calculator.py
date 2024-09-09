@@ -1,8 +1,8 @@
 
-# Python module for copying objects
+
 import copy
 
-# Importing application internal classes
+
 from grades import Grades
 from grade_weights import GradeWeights
 
@@ -37,12 +37,12 @@ class GradeCalculator:
         all assignments that have not been completed receive 100%. 
         """
         
-        # Need to create a copy so that we don't overwrite
-        # the values of the Grades object that was passed in
+
+
         optimistic_grades:Grades = copy.copy(grades)
         
-        # Now we are setting all grades that have not been set
-        # to the maximum percentage of 100%
+
+
         if optimistic_grades.quiz_1 is None:
             optimistic_grades.quiz_1 = 1
         if optimistic_grades.quiz_2 is None:
@@ -54,8 +54,8 @@ class GradeCalculator:
         if optimistic_grades.final is None:
             optimistic_grades.final = 1
         
-        # Let the basic calculation function take care of actually
-        # calculating the percentage grade
+
+
         return GradeCalculator.calculate_course_percentage(optimistic_grades, weights)
         
     @staticmethod
@@ -66,12 +66,12 @@ class GradeCalculator:
         and in the syllabus.
         """
         
-        # Avoid exception due to missing value
+
         if percentage_grade is None:
             return None
         
-        # Return the letter that corresponds to
-        # the percentage cutoff
+
+
         if percentage_grade >= 0.91:
             return 'A'
         elif percentage_grade >= 0.8:
