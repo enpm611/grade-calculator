@@ -3,6 +3,7 @@
 from grades import Grades
 from grade_weights import GradeWeights
 from grade_calculator import GradeCalculator
+import json
 
 # This runs the grade calculation.
 
@@ -10,8 +11,15 @@ from grade_calculator import GradeCalculator
 my_grades = Grades()
 weights = GradeWeights()
 
+filepath = "score.json"
+with open(filepath) as f:
+    d = json.load(f)
+
+for key, value in d.items():
+    if hasattr(my_grades, key):
+        setattr(my_grades, key, value)
 # Set grades achieved so far
-my_grades.quiz_1 = 0.78 # Received 78% in the first quiz
+#my_grades.quiz_1 = 0.78 # Received 78% in the first quiz
 
 # Print out the grades to console
 print(my_grades)
