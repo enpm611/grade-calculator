@@ -1,0 +1,11 @@
+{
+  "assignments": [
+    {"Task": "Assignment 1", "grade": 98},
+    {"Task": "Assignment 2", "grade": 99},
+    {"Task": "Quiz 1", "grade": 100},
+    {"Task": "Midterm", "grade": 100},
+    {"Task": "Project", "grade": 100},
+    {"Task": "Quiz 2", "grade": 97},
+    {"Task": "Final Exam", "grade": 99.5}
+  ]
+}
